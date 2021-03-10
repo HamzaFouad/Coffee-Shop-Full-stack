@@ -7,6 +7,18 @@ database_filename = "database.db"
 project_dir = os.path.dirname(os.path.abspath(__file__))
 database_path = "sqlite:///{}".format(os.path.join(project_dir, database_filename))
 
+class Color:
+  PURPLE = '\033[95m'
+  CYAN = '\033[96m'
+  DARKCYAN = '\033[36m'
+  BLUE = '\033[94m'
+  GREEN = '\033[92m'
+  YELLOW = '\033[93m'
+  RED = '\033[91m'
+  BOLD = '\033[1m'
+  UNDERLINE = '\033[4m'
+  END = '\033[0m'
+
 db = SQLAlchemy()
 
 '''
@@ -26,6 +38,7 @@ db_drop_and_create_all()
     !!NOTE you can change the database_filename variable to have multiple verisons of a database
 '''
 def db_drop_and_create_all():
+    print(f'{Color.BLUE}Database restarted!{Color.BLUE}')
     db.drop_all()
     db.create_all()
 

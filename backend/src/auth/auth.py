@@ -137,7 +137,7 @@ def requires_auth(permission=''):
             try:
                 payload = verify_decode_jwt(token)
             except Exception as e:
-                print(Color.RED, e, Color.END)
+                print(f'{Color.RED}Cannot verify the decoded jwt - Exception message:\n{e}{Color.END}')
                 abort(401)
             check_permissions(permission, payload)
             return f(payload, *args, **kwargs)
