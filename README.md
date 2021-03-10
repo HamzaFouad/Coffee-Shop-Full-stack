@@ -1,35 +1,62 @@
-# Coffee Shop Full Stack
+# Coffee Shop Backend
 
-## Full Stack Nano - IAM Final Project
-
-Udacity has decided to open a new digitally enabled cafe for students to order drinks, socialize, and study hard. But they need help setting up their menu experience.
-
-You have been called on to demonstrate your newly learned skills to create a full stack drink menu application. The application must:
-
-1) Display graphics representing the ratios of ingredients in each drink.
-2) Allow public users to view drink names and graphics.
-3) Allow the shop baristas to see the recipe information.
-4) Allow the shop managers to create new drinks and edit existing drinks.
-
-## Tasks
-
-There are `@TODO` comments throughout the project. We recommend tackling the sections in order. Start by reading the READMEs in:
-
-1. [`./backend/`](./backend/README.md)
-2. [`./frontend/`](./frontend/README.md)
-
-## About the Stack
-
-We started the full stack application for you. It is desiged with some key functional areas:
-
-### Backend
-
-The `./backend` directory contains a partially completed Flask server with a pre-written SQLAlchemy module to simplify your data needs. You will need to complete the required endpoints, configure, and integrate Auth0 for authentication.
-
-[View the README.md within ./backend for more details.](./backend/README.md)
+## Getting Started
 
 ### Frontend
 
-The `./frontend` directory contains a complete Ionic frontend to consume the data from the Flask server. You will only need to update the environment variables found within (./frontend/src/environment/environment.ts) to reflect the Auth0 configuration details set up for the backend app. 
+#### Installing Node and NPM
 
-[View the README.md within ./frontend for more details.](./frontend/README.md)
+This project depends on Nodejs and Node Package Manager (NPM). Before continuing, you must download and install Node (the download includes NPM) from [https://nodejs.com/en/download](https://nodejs.org/en/download/).
+
+#### Installing Ionic Cli
+
+The Ionic Command Line Interface is required to serve and build the frontend. Instructions for installing the CLI  is in the [Ionic Framework Docs](https://ionicframework.com/docs/installation/cli).
+
+#### Installing project dependencies
+
+This project uses NPM to manage software dependencies. NPM Relies on the package.json file located in the `frontend` directory of this repository.
+After cloning, open your terminal and run(Inside `Frontend` folder):
+
+```bash
+npm install
+```
+
+>_tip_: **npm i** is shorthand for **npm install**
+
+### Backend
+
+#### Installing Dependencies
+
+Create a virtualenv and activate it
+
+```bash
+python3 -m virtualenv coffee-shop-venv
+source coffee-shop-venv/bin/activate
+```
+
+then inside `backend` directory run:
+
+```bash
+pip install -r requirements.txt
+```
+
+## Running the server
+
+### frontend
+
+Inside `fontend` directory run:
+
+```bash
+ionic serve
+```
+
+### backend
+
+From within the `./src` directory first ensure you are working using the virtual environment you created.
+
+Then run the following command:
+
+```bash
+chmod +x run_flaskapp.sh
+./run_flaskapp.sh
+```
