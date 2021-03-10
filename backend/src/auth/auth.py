@@ -37,7 +37,7 @@ def get_token_auth_header():
   '''
   returns token
   '''
-
+  print(f'{Color.BLUE}Entered get_token_auth_header!{Color.END}')
   if 'Authorization' not in request.headers:
     abort(401)
 
@@ -60,17 +60,27 @@ def check_permissions(permission, payload):
     @returns
       True if permissions are available
   '''
+  print(f'{Color.BLUE}Entered check_permissions!{Color.END}')
+  # if 'permissions' not in payload:
+  #     abort(400)
+
+  # if permission not in payload['permissions']:
+  #     abort(403)
+
   if 'permissions' not in payload:
-    raise AuthError({
-      'status_code': 'invalid_claims',
-      'error_description': 'Permissions not included in JWT.'
-      }, 400)
+    abort(401)
+    # raise AuthError({
+    #   'status_code': 'invalid_claims',
+    #   'error_description': 'Permissions not included in JWT.'
+    #   }, 401)
 
   if permission not in payload['permissions']:
-    raise AuthError({
-      'status_code': 'unauthorized',
-      'error_description': 'Permission not found.'
-      }, 403)
+    abort(401)
+    #   raise AuthError({
+    #     'status_code': 'unauthorized',
+    #     'error_description': 'Permission not found.'
+    #     }, 403)
+  
   return True
 
 
@@ -80,6 +90,7 @@ def verify_decode_jwt(token):
   jwks = json.loads(jsonurl.read())
   unverified_header = jwt.get_unverified_header(token)
   rsa_key = {}
+  print(f'{Color.BLUE}Entered verify_decode_jwt!{Color.END}')
   if 'kid' not in unverified_header:
       raise AuthError({
           'status_code': 'invalid_header',

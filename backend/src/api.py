@@ -108,7 +108,6 @@ def modify_drink(jwt, id):
   '''
   Modify either the title of the drink, recipe or both.
   '''
-  print('\n\n\n\n\n\n\n')
   drink = Drink.query.get(id)
   if drink is None:
     print(f'{Color.RED}Failed to PATCH the drink: Error "drink is None"{Color.END}')
@@ -190,8 +189,3 @@ def unprocessable(error):
         "error": NOT_PROCESSABLE,
         "message": "NOT PROCESSABLE"
     }), NOT_PROCESSABLE
-    
-
-# Manager Token: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjUyWjE0eUNFaGdoVzFnV1BuclVkdCJ9.eyJpc3MiOiJodHRwczovL2F1dGh0dXRvcmlhbC5ldS5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NjA0NzA2YzkwZGM4NWIwMDY4MjQ5ZmY4IiwiYXVkIjoiaW1hZ2UiLCJpYXQiOjE2MTUzMzgwNzMsImV4cCI6MTYxNTM3NDA3MywiYXpwIjoiY0VNNmVrazhiUXByUTVGVEJEZnRpVndicWljOUZZOUQiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTpkcmlua3MiLCJnZXQ6ZHJpbmtzLWRldGFpbCIsInBhdGNoOmRyaW5rcyIsInBvc3Q6ZHJpbmtzIl19.g6IV7Y8S6RvrCTxH1qK5oEaaXghXC8uYwP-Nq0ZkMWYEjtVajAPR7gZa2BYhPzjZlGY8JXj1QRZHCzdCF1k_t_pdh0qtOoCbvPKE79PUKSBlR96mucvE01rd3UL6lO7kCasmPlHb6H8wP8PevRhvSTuceud4yo0zu81xdMbIDOZL-Xg20d_TaNJ0fph0xnmonMJBBqykRYiemAbEAbx_P6MEnGaIcieuSfzXj85Viy5lqhjT9a2eH12FhVVtXQIlQz3FDQkrYXLqmfjAKy3qbCDXkRDdiQLJuK_P1VMHcosmwY0WzssaqClgrVnfAjuW7alamP3vC7Bjt3bmAeXLLQ
-# Barista Token: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjUyWjE0eUNFaGdoVzFnV1BuclVkdCJ9.eyJpc3MiOiJodHRwczovL2F1dGh0dXRvcmlhbC5ldS5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NjA0ODUxNzkwZGM4NWIwMDY4MjU1OWVhIiwiYXVkIjoiaW1hZ2UiLCJpYXQiOjE2MTUzNTI5NTcsImV4cCI6MTYxNTM4ODk1NywiYXpwIjoiY0VNNmVrazhiUXByUTVGVEJEZnRpVndicWljOUZZOUQiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImdldDpkcmlua3MtZGV0YWlsIl19.dRvUHYWOWWvQtMWHwvbHK1OSkIt2FEL2vrhqkR_fBO7sLL0u-s6IzK1rstpups3XE05d2V3rzUs_3bXYOcymX7a7kvm9_10vxpHMZ6lHFrYCuy2hqFCkUAs0hWV0v4zsNvTisPkM4skpzzGmBXOSwkTKTW5HWnsAPHxLCpFYb9BBMPrsox54VZyBptgZ7DYqSB4C93w5ydgcksC4sjziD6-x3bVhC52jcswr7hzoR2gbkKJh76aifKT8yxg4Ozl7TiFMME23MDO72RmLgLPGxLfLnN9kZX3PDsU9AsEmmwuiwKG1t-04PF3VgKHTFUb2hLFNvTcuAWAQHsJY_cJc0A
-# https://authtutorial.eu.auth0.com/authorize?audience=image&response_type=token&client_id=cEM6ekk8bQprQ5FTBDftiVwbqic9FY9D&redirect_uri=https://localhost.com:8100/
